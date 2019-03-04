@@ -1,68 +1,116 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Front-end engineer testing
 
-## Available Scripts
+The front-end test is made of two parts:
 
-In the project directory, you can run:
+* HTML+CSS+JS mastery,
+  
+* General programming skills.
 
-### `npm start`
+We use Angular, React and Vue in our products, being Angular and Vue the most common,
+but you are free to use other frameworks or no frameworks at all.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## HTML+CSS+JS Test
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Our designers made a mockup and we want to see how it feels in a first actual HTML
+implementation. Your task is to recreate the contents of the `table_mock.png`
+file using HTML+CSS+JS:
 
-### `npm test`
+* The delivery should be a single web page. The widgets in the mock-up- like the calendar,
+  order header, search box, etc.- are not required to be interactive. Just ensure that
+  the appearance is the same.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Your index page should include the contents of the `html_segment.html` and use the
+  global function `mockAPI` to simulate the fetch of the table data. You should use
+  the response to draw the table. I.E., do not hardcode the table contents and, instead,
+  iterate the mockAPI promise as if it was an actual remote API call.
 
-### `npm run build`
+* For less senior positions, the test wll contain a folder named `page_shell_sample`.
+  You can use it to save time and just add the missing widgets.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* The left side menu options should display the selected style when in hover and focus states.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* Your usage of semantic HTML will be evaluated. Use the correct tags, roles and ARIA attributes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* All the icons of the mock are FontAwesome icons.
 
-### `npm run eject`
+* The main font of the mock is,
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ```css
+   font-size: 14px;
+   font-family: 'Circular Std';
+   color: #6F6F6F;
+  ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  The font home is [https://github.com/elartix/circular-std](https://github.com/elartix/circular-std),
+  but you can use other secure fonts if you have any trouble installing it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* You should provide a README.md file explaining how to install
+  and see your deliverable. If you add any test, you should also
+  explain how to run it in the README file.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## General programming skills
 
-## Learn More
+For the general programming test, you can use any language that
+you feel confortable with. However, we use Typescript, JavaScript
+and Python as our main languages and using those will make easier
+for us to check the deliverable.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We want to add to our portfolio a Music Genealogy Microservice to find the nearest common
+ancestor of two music styles. For example, if we ask our system for the nearest common
+ancestor of Death Metal and Industrial Metal, it should return Thrash metal.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In a more formal spec, the microservice will be a function with this signature
+(in Typescript language):
 
-### Code Splitting
+```Typescript
+function findAncestor(genreA: string, genreB: string): string
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+With the rule that if `genreA` is an ancestor of `genreB`, then it should return `genreA`.
+If `genreA` is a root element, no ancestors, the function should return `genreA`.
 
-### Analyzing the Bundle Size
+To make the exercise easier, the genres will be named with letters and they will
+have only a single ancestor. Also, the tree will be connected and have a single
+root element without any ancestor.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Your program should be able to read from `stdin` and output to `stdout` the response.
 
-### Making a Progressive Web App
+The input files are as follow:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* The first line will indicate the number `n` of items and the number `m` of questions.
+* The next line will indicate the root element name.
+* The next `n - 1` lines will indicate the pair element name
+  and one of its descendants. E.g. `a b` indicates that the genre `a` is a parent of `b`.
+* The last `m` lines will indicate the pair that we want to
+  know their nearest common ancestor.
 
-### Advanced Configuration
+For example, the input
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```text
+4 2
+a
+a b
+b c
+b d
+a b
+c d
+```
 
-### Deployment
+describes this tree
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```text
+a --> b --> c
+      | --> d
+```
 
-### `npm run build` fails to minify
+And request to our service what are the common ancestors of `(a,b)` and `(c, d)`.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The output of our microservice is a text stream of `m` lines with the responses. With
+the previous input, should return
+
+```text
+a
+b
+```
+
+The folder `dataset` will contain inputs to test your program.
