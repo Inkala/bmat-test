@@ -9,3 +9,7 @@ const content = () => (
 );
 
 export default content;
+
+// Placeholders for menu
+export const Sendungen = () => <p>Placeholder for Sendungen content</p>;
+export const Programs = () => <p>Placeholder for Programs content</p>;

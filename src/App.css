@@ -10,8 +10,5 @@
   text-align: center;
   font-size: 14px;
   font-family: CircularStd;
-}
-
-p {
   color: var(--dark-gray);
 }

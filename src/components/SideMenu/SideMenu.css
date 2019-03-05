@@ -1,17 +1,32 @@
 .side-menu {
-  background: lavender;
   width: 20%;
   min-width: 200px;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0;
+  padding: 5px;
 }
 
-.side-menu--item {
-  
+.side-menu li {
+  width: 100%;
 }
 
-.side-menu--item svg {
-  color: hotpink;
+.side-menu a {
+  display: flex;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+
+.side-menu a:hover, .side-menu a.active {
+  color: var(--dark-pink);
+  background: var(--light-pink);
+}
+
+.side-menu svg {
+  margin-right: 15px;
 }
