@@ -15,6 +15,8 @@ Our designers made a mockup and we want to see how it feels in a first actual HT
 implementation. Your task is to recreate the contents of the `table_mock.png`
 file using HTML+CSS+JS:
 
+![Mock](https://github.com/Inkala/bmat-test/blob/master/public/table_mock.png)
+
 * The delivery should be a single web page. The widgets in the mock-up- like the calendar,
   order header, search box, etc.- are not required to be interactive. Just ensure that
   the appearance is the same.
