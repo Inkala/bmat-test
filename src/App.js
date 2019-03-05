@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { faUserCircle, faSortDown } from '@fortawesome/free-solid-svg-icons';
+
+import Layout from './containers/Layout/Layout';
 import './App.css';
+
+library.add(far, faUserCircle, faSortDown);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className='App'>
+        <Layout />
       </div>
     );
   }
