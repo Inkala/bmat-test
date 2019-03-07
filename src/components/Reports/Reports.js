@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchBar from './SearchBar/SearchBar';
 import Calendar from './Calendar/Calendar';
 import ReportsTable from './ReportsTable/ReportsTable';
-import { mockAPI } from '../../helper';
+import { mockAPI } from '../../helpers/mockAPI';
 import './Reports.css';
 
 class Reports extends Component {
@@ -22,7 +22,6 @@ class Reports extends Component {
   }
 
   /*--- Search Bar Methods ---*/
-
   filterProgramHandler = (e) => {
     const searchValue = e.target.value.toUpperCase();
     const filteredTable = this.state.initialReports.filter((program) => {

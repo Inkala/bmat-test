@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './SideMenu.css';
 
 const sideMenu = () => (
-  <nav>
-    <ul className='side-menu'>
+  <nav className='side-menu'>
+    <ul className='menu-content'>
       <li>
         <NavLink to='/' exact>
           <FontAwesomeIcon icon='desktop' />
