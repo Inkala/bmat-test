@@ -13,7 +13,10 @@ import {
   faColumns,
   faExclamationCircle,
   faCloudDownloadAlt,
-  faPaperPlane
+  faPaperPlane,
+  faCalendarAlt,
+  faAngleLeft,
+  faAngleRight
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -29,5 +32,8 @@ library.add(
   faColumns,
   faExclamationCircle,
   faCloudDownloadAlt,
-  faPaperPlane
+  faPaperPlane,
+  faCalendarAlt,
+  faAngleLeft,
+  faAngleRight
 );

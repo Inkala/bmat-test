@@ -1,0 +1,48 @@
+.calendar {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.calendar-wrapper {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  border: none;
+  padding: 8px 30px 8px 0;
+}
+
+.dd-menu {
+  margin-top: 0px;
+  font-size: 0.85rem;
+  width: 115%;
+  margin-left: -15%;
+}
+
+.dd-menu .is-selected {
+  color: var(--dark-pink);
+  background-color: white;
+}
+
+.dd-menu div:hover {
+  background-color: var(--light-pink);
+}
+
+/* 
+.dd-menu div:first-child {
+  font-weight: bold;
+} */
+
+.calendar svg {
+  padding:0  10px;
+  color: var(--gray);
+}
+
+.calendar-wrapper svg:hover {
+  color: var(--gray);
+  cursor: inherit;
+}

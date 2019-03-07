@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SearchBar from './SearchBar/SearchBar';
+import Calendar from './Calendar/Calendar';
 import ReportsTable from './ReportsTable/ReportsTable';
-// import Loading from '../../components/UI/Loading/Loading';
 import { mockAPI } from '../../helper';
-// import getAll from '../../services/programs';
 import './Reports.css';
 
 class Reports extends Component {
@@ -27,23 +26,20 @@ class Reports extends Component {
   filterProgramHandler = (e) => {
     const searchValue = e.target.value.toUpperCase();
     const filteredTable = this.state.initialReports.filter((program) => {
-      console.log(program);
       return program.name.toUpperCase().includes(searchValue);
     });
     this.setState({ reports: filteredTable });
-    console.log(searchValue);
   };
-  
+
   render() {
     if (this.state.error) {
       return <p>Something went wrong</p>;
     }
-    console.table(this.state.reports);
     return (
       <section className='reports'>
         <div className='reports--nav'>
           <SearchBar onSearchChange={this.filterProgramHandler} />
-          <span>Calendar</span>
+          <Calendar />
         </div>
         <div className='reports--options'>
           <span>
