@@ -18,15 +18,18 @@
   padding: 12px;
   width: 100%;
   box-sizing: border-box;
-  color: var(--dark-gray);
+  color: var(--gray);
   text-decoration: none;
 }
 
-.side-menu a:hover, .side-menu a.active {
+.side-menu a.active {
   color: var(--dark-pink);
   background: var(--light-pink);
 }
-
+.side-menu a:hover {
+  color: var(--dark-pink);
+  font-weight: 500;
+}
 .side-menu svg {
   margin-right: 15px;
 }

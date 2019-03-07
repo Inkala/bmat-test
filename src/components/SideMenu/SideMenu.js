@@ -8,13 +8,13 @@ const sideMenu = () => (
   <nav>
     <ul className='side-menu'>
       <li>
-        <NavLink to='/'>
+        <NavLink to='/' exact>
           <FontAwesomeIcon icon='desktop' />
           Reports
         </NavLink>
       </li>
       <li>
-        <NavLink to='/sendungen'>
+        <NavLink to='/sendungen' >
           <FontAwesomeIcon icon={['far', 'list-alt']} />
           Sendungen
         </NavLink>

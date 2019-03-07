@@ -1,0 +1,25 @@
+.reports {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3%;
+}
+
+.reports .reports--nav {
+  background: lavender;
+  display: flex;
+}
+
+.reports--options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray);
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.reports--options svg {
+  padding-left: 8px;
+}

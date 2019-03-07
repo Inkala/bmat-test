@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Header from '../../components/Header/Header';
 import SideMenu from '../../components/SideMenu/SideMenu';
-import Content from '../../components/Content/Content';
+import Reports from '../../components/Reports/Reports';
 import './Layout.css';
 
 class Layout extends Component {
@@ -12,7 +12,7 @@ class Layout extends Component {
         <Header />
         <section className="main-section">
           <SideMenu />
-          <Content />
+          <Reports />
         </section>
       </main>
     );

@@ -1,0 +1,39 @@
+.report-item {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 25px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.report-item:last-child {
+  border: none;
+}
+
+.report-item td {
+  width: 35%;
+}
+.report-item span {
+  display: flex;
+}
+
+.item--name {
+  color: var(--black);
+  font-weight: 500;
+}
+
+.item--date, .item--groupType, .item--icons {
+  color: var(--gray);
+}
+
+.item--errors {
+  color: var(--dark-pink);
+}
+
+.item--errors svg:hover {
+  cursor: inherit;
+}
+
+.item--icons svg:first-child {
+  padding-right: 20px;
+}
