@@ -42,7 +42,7 @@ class Reports extends Component {
       <section className='reports'>
         <div className='reports--nav'>
           <SearchBar onSearchChange={this.filterProgramHandler} />
-          <p>Calendar</p>
+          <span>Calendar</span>
         </div>
         <div className='reports--options'>
           <span>Sort By: Program <FontAwesomeIcon icon='arrow-down' /></span>

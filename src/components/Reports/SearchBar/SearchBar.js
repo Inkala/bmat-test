@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import "./SearchBar.css";
+import './SearchBar.css';
 
 const searchBar = () => {
   return (
-    <div className="search-bar">
+    <div className='search-bar'>
+      <FontAwesomeIcon icon='search' />
       <input
-        type="text"
-        className="search-bar__input"
-        placeholder="Search Programs"
+        type='text'
+        className='search-bar__input'
+        placeholder='Search Programs'
       />
     </div>
   );

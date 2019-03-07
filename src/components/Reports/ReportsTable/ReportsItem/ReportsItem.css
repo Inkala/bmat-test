@@ -6,13 +6,23 @@
   border-bottom: 1px solid var(--light-gray);
 }
 
+.report-item:hover {
+  background-color: var(--light-gray);
+}
+
+.report-item:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
 .report-item:last-child {
+  border-radius: 0 0 5px 5px;
   border: none;
 }
 
 .report-item td {
   width: 35%;
 }
+
 .report-item span {
   display: flex;
 }
