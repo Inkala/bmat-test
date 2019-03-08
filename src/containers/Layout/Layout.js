@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Header from '../../components/Header/Header';
-import SideMenu from '../../components/SideMenu/SideMenu';
-import Reports from '../../components/Reports/Reports';
-import './Layout.css';
+import Header from "../../components/Header/Header";
+import SideMenu from "../../components/SideMenu/SideMenu";
+import "./Layout.css";
+
+// Imports for the Router
+import { Route, Switch } from "react-router-dom";
+import Reports, { Sendungen, Programs } from "../../components/Reports/Reports";
 
 class Layout extends Component {
   render() {
@@ -12,7 +15,13 @@ class Layout extends Component {
         <Header />
         <section className="main-section">
           <SideMenu />
-          <Reports />
+          <div className="content-area">
+            <Switch>
+              <Route exact path="/" component={Reports} />
+              <Route path="/sendungen" component={Sendungen} />
+              <Route path="/programs" component={Programs} />
+            </Switch>
+          </div>
         </section>
       </main>
     );

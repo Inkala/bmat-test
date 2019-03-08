@@ -16,7 +16,8 @@ import {
   faPaperPlane,
   faCalendarAlt,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faCheckCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -35,5 +36,6 @@ library.add(
   faPaperPlane,
   faCalendarAlt,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faCheckCircle
 );

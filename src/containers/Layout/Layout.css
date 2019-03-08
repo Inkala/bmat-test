@@ -6,3 +6,7 @@
 .main-section {
  display: flex;
 }
+
+.content-area {
+  width: 75%;
+}

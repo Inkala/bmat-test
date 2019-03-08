@@ -4,8 +4,9 @@ export const mockAPI = function() {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(
-        JSON.parse(document.getElementById('fake_server_response').textContent)
+        JSON.parse(document.getElementById("fake_server_response")
+        .textContent)
       );
     }, randWait);
   });
-}
+};

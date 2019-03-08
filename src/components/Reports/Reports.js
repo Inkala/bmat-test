@@ -16,44 +16,77 @@ class Reports extends Component {
 
   /*--- Call fetch method when app loads ---*/
   componentDidMount() {
-    mockAPI().then((res) => {
-      this.setState({ reports: res, initialReports: res });
-    });
+    mockAPI()
+      .then(res => {
+        this.setState({ reports: res, initialReports: res });
+      })
+      .catch(err => console.log(err));
   }
 
-  /*--- Search Bar Methods ---*/
-  filterProgramHandler = (e) => {
+  /*--- Filters program by name ---*/
+  filterProgramHandler = e => {
     const searchValue = e.target.value.toUpperCase();
-    const filteredTable = this.state.initialReports.filter((program) => {
+    const filteredTable = this.state.initialReports.filter(program => {
       return program.name.toUpperCase().includes(searchValue);
     });
     this.setState({ reports: filteredTable });
+  };
+
+  /*--- Makes green tick appear ---*/
+  sendSuccessHandler = rep => {
+    const reports = this.state.reports.map(report => {
+      if (report.name === rep.name) {
+        report.sent = true;
+      }
+      return report;
+    });
+    this.setState({ reports });
   };
 
   render() {
     if (this.state.error) {
       return <p>Something went wrong</p>;
     }
+    const reportsTable = this.state.reports ? (
+      <ReportsTable
+        reports={this.state.reports}
+        handleSuccess={this.sendSuccessHandler}
+      />
+    ) : (
+      <p>'Loading...'</p>
+    );
     return (
-      <section className='reports'>
-        <div className='reports--nav'>
+      <section className="reports">
+        <div className="reports--nav">
           <SearchBar onSearchChange={this.filterProgramHandler} />
           <Calendar />
         </div>
-        <div className='reports--options'>
+        <div className="reports--options">
           <span>
-            Sort By: Program <FontAwesomeIcon icon='arrow-down' />
+            Sort By: Program
+            <FontAwesomeIcon
+              aria-hidden="false"
+              aria-label="Sorting direction"
+              role="button"
+              icon="arrow-down"
+            />
           </span>
           <div>
-            <FontAwesomeIcon icon='sliders-h' />
-            <FontAwesomeIcon icon='columns' />
+            <FontAwesomeIcon
+              aria-hidden="false"
+              aria-label="Settings"
+              role="button"
+              icon="sliders-h"
+            />
+            <FontAwesomeIcon
+              aria-hidden="false"
+              aria-label="Views"
+              role="button"
+              icon="columns"
+            />
           </div>
         </div>
-        {this.state.reports ? (
-          <ReportsTable reports={this.state.reports} />
-        ) : (
-          <p>{`<Loading />`}</p>
-        )}
+        {reportsTable}
       </section>
     );
   }

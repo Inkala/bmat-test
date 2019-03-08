@@ -48,3 +48,16 @@
 .item--icons svg:first-child {
   padding-right: 20px;
 }
+
+.sent-check {
+  color: var(--green);
+  font-size: 0.75em;
+  margin-top: 10px;
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-bottom: -6px;
+}
+
+.sent-check:hover {
+  color: var(--green);
+}

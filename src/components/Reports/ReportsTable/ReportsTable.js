@@ -1,16 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import ReportsItem from './ReportsItem/ReportsItem';
-import './ReportsTable.css';
+import ReportsItem from "./ReportsItem/ReportsItem";
+import "./ReportsTable.css";
 
-const reportsTable = (props) => {
-  const reports = props.reports.map((report) => (
-    <ReportsItem key={report.name} report={report} />
+const reportsTable = ({ reports, handleSuccess }) => {
+  const reportsList = reports.map(report => (
+    <ReportsItem
+      key={report.name}
+      report={report}
+      clickHandler={() => handleSuccess(report)}
+    />
   ));
   return (
-    <table className='report-table'>
-      <tbody>{reports}</tbody>
-    </table>
+    <div className="test">
+      <table className="report-table">
+        <tbody>{reportsList}</tbody>
+      </table>
+    </div>
   );
 };
 
