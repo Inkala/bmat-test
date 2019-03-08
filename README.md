@@ -1,118 +1,35 @@
-# Front-end engineer testing
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The front-end test is made of two parts:
+## About this test
 
-* HTML+CSS+JS mastery,
-  
-* General programming skills.
+To see this test working, clone the repository, type `npm install` from the root folderand then type `npm start`.
 
-We use Angular, React and Vue in our products, being Angular and Vue the most common,
-but you are free to use other frameworks or no frameworks at all.
+### Technologies used
 
-## HTML+CSS+JS Test
+For this test I chose to use [React](https://reactjs.org/) with JSX because it is the JavaScript tool in which I have more knowledge and experience, and makes it realy easy to write markup that works well with the functionalities.
 
-Our designers made a mockup and we want to see how it feels in a first actual HTML
-implementation. Your task is to recreate the contents of the `table_mock.png`
-file using HTML+CSS+JS:
+### The test
 
-![Mock](https://github.com/Inkala/bmat-test/blob/master/public/table_mock.png)
+The page has basically 3 main components. The header that only shows the user icon, the side menu that toggles between the 3 components and main area that shows the conten.
 
-* The delivery should be a single web page. The widgets in the mock-up- like the calendar,
-  order header, search box, etc.- are not required to be interactive. Just ensure that
-  the appearance is the same.
+The only content component created was the one that the mock showed. For the other two it only displays a text.
 
-* Your index page should include the contents of the `html_segment.html` and use the
-  global function `mockAPI` to simulate the fetch of the table data. You should use
-  the response to draw the table. I.E., do not hardcode the table contents and, instead,
-  iterate the mockAPI promise as if it was an actual remote API call.
+The menu was created using react-router and the calendar dropdown was created with react-dropdown that takes care of the display.
 
-* For less senior positions, the test wll contain a folder named `page_shell_sample`.
-  You can use it to save time and just add the missing widgets.
+The mock was also showing some green ticks over some of the paper plane icon and I assumed that it was a confirmation that something was sent. The green icons appear when you click on the "send" icon.
 
-* The left side menu options should display the selected style when in hover and focus states.
+### Success
 
-* Your usage of semantic HTML will be evaluated. Use the correct tags, roles and ARIA attributes.
+All the functionalities that were added to the app are working as expected. I also decided to make the search bar work to filter the programs by name, even though the specifications said that it wasn't required, because I implemented something very similar a few weeks ago and it was still fresh.
 
-* All the icons of the mock are FontAwesome icons.
+### Challenges
+I am not very familiar with WAI ARIA and only added the basic states and properties, but I don't really know how to navigate on a page with screen readers without the mouse to directly click on them, so I am not sure if they work as expected.
 
-* The main font of the mock is,
+### What to improve
+There is always things that you want to improve when developing something. For example I want to add more tests, not only for learning purposes but to reduce the time spent checking the existing functionalities while making changes in the app.
 
-  ```css
-   font-size: 14px;
-   font-family: 'Circular Std';
-   color: #6F6F6F;
-  ```
+I would have liked to include either Redux or React Context but I did not feel confident enough about getting it to work on the time I had estimated.
 
-  The font home is [https://github.com/elartix/circular-std](https://github.com/elartix/circular-std),
-  but you can use other secure fonts if you have any trouble installing it.
+### Additional notes
 
-* You should provide a README.md file explaining how to install
-  and see your deliverable. If you add any test, you should also
-  explain how to run it in the README file.
-
-## General programming skills
-
-For the general programming test, you can use any language that
-you feel confortable with. However, we use Typescript, JavaScript
-and Python as our main languages and using those will make easier
-for us to check the deliverable.
-
-We want to add to our portfolio a Music Genealogy Microservice to find the nearest common
-ancestor of two music styles. For example, if we ask our system for the nearest common
-ancestor of Death Metal and Industrial Metal, it should return Thrash metal.
-
-In a more formal spec, the microservice will be a function with this signature
-(in Typescript language):
-
-```Typescript
-function findAncestor(genreA: string, genreB: string): string
-```
-
-With the rule that if `genreA` is an ancestor of `genreB`, then it should return `genreA`.
-If `genreA` is a root element, no ancestors, the function should return `genreA`.
-
-To make the exercise easier, the genres will be named with letters and they will
-have only a single ancestor. Also, the tree will be connected and have a single
-root element without any ancestor.
-
-Your program should be able to read from `stdin` and output to `stdout` the response.
-
-The input files are as follow:
-
-* The first line will indicate the number `n` of items and the number `m` of questions.
-* The next line will indicate the root element name.
-* The next `n - 1` lines will indicate the pair element name
-  and one of its descendants. E.g. `a b` indicates that the genre `a` is a parent of `b`.
-* The last `m` lines will indicate the pair that we want to
-  know their nearest common ancestor.
-
-For example, the input
-
-```text
-4 2
-a
-a b
-b c
-b d
-a b
-c d
-```
-
-describes this tree
-
-```text
-a --> b --> c
-      | --> d
-```
-
-And request to our service what are the common ancestors of `(a,b)` and `(c, d)`.
-
-The output of our microservice is a text stream of `m` lines with the responses. With
-the previous input, should return
-
-```text
-a
-b
-```
-
-The folder `dataset` will contain inputs to test your program.
+The other two parts, the logic test and the programming skills test are sent separately.

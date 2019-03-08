@@ -40,6 +40,7 @@ const calendar = () => {
         aria-label="Next Year"
         role="button"
         icon="angle-right"
+        style={{paddingRight: 0}}
       />
     </div>
   );

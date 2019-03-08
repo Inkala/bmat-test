@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import ReportsItem from "./ReportsItem/ReportsItem";
-import "./ReportsTable.css";
+import ReportsItem from './ReportsItem/ReportsItem';
+import './ReportsTable.css';
 
 const reportsTable = ({ reports, handleSuccess }) => {
   const reportsList = reports.map(report => (
@@ -12,11 +12,9 @@ const reportsTable = ({ reports, handleSuccess }) => {
     />
   ));
   return (
-    <div className="test">
-      <table className="report-table">
-        <tbody>{reportsList}</tbody>
-      </table>
-    </div>
+    <table className="report-table">
+      <tbody>{reportsList}</tbody>
+    </table>
   );
 };
 
