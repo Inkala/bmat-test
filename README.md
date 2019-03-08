@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## About this test
 
 To see this test working, clone the repository, type `npm install` from the root folderand then type `npm start`.
@@ -12,11 +10,11 @@ For this test I chose to use [React](https://reactjs.org/) with JSX because it i
 
 The page has basically 3 main components. The header that only shows the user icon, the side menu that toggles between the 3 components and main area that shows the conten.
 
-The only content component created was the one that the mock showed. For the other two it only displays a text.
+The only content component created was "Reports" as shown in the mock. For the other two it only displays a text.
 
-The menu was created using react-router and the calendar dropdown was created with react-dropdown that takes care of the display.
+The menu was created using react-router and the calendar dropdown was created with react-dropdown that takes care of the display. The rest of the interactive elements are just displaying but are not functional.
 
-The mock was also showing some green ticks over some of the paper plane icon and I assumed that it was a confirmation that something was sent. The green icons appear when you click on the "send" icon.
+The mock was also showing some green ticks over some of the paper plane icons and I assumed that it was a confirmation that something was sent. The green icons appear when you click on the "send" icon.
 
 ### Success
 
